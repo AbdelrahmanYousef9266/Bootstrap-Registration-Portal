@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bootstrap Registration Portal</title>
+
+  <!-- Bootstrap 5 CSS CDN -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+  />
+
+  <!-- Bootstrap Icons CDN -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===================== NAVIGATION BAR ===================== -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
+    <div class="container">
+
+      <!-- Brand Logo + Title -->
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+        <span class="brand-icon">
+          <i class="bi bi-person-badge-fill"></i>
+        </span>
+        <span class="brand-text">RegPortal</span>
+      </a>
+
+      <!-- Hamburger Toggle (mobile) -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNav"
+        aria-controls="mainNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Nav Links -->
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">
+              <i class="bi bi-house-door me-1"></i>Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">
+              <i class="bi bi-info-circle me-1"></i>About
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">
+              <i class="bi bi-envelope me-1"></i>Contact
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+  <!-- ===================== END NAVBAR ===================== -->
+
+
+  <!-- ===================== HERO IMAGE SECTION ===================== -->
+  <section class="hero-section">
+    <div class="container-fluid p-0">
+
+      <!-- Full-width responsive hero image -->
+      <div class="hero-wrapper position-relative">
+        <img
+          src="https://picsum.photos/seed/portal/1920/500"
+          class="img-fluid hero-img w-100"
+          alt="Hero Banner"
+        />
+        <div class="hero-overlay d-flex flex-column align-items-center justify-content-center text-white text-center">
+          <h1 class="display-4 fw-bold mb-2">Welcome to RegPortal</h1>
+          <p class="lead mb-4">Create your account and join our community today.</p>
+          <a href="#register" class="btn btn-success btn-lg px-5 shadow">
+            <i class="bi bi-person-plus me-2"></i>Get Started
+          </a>
+        </div>
+      </div>
+
+      <!-- Centered circular profile image below hero -->
+      <div class="text-center circular-img-wrapper">
+        <img
+          src="https://picsum.photos/seed/avatar/200/200"
+          class="rounded-circle circular-avatar shadow border border-4 border-white"
+          alt="Community Avatar"
+        />
+        <div class="mt-3">
+          <h5 class="fw-semibold text-dark">Join Our Community</h5>
+          <p class="text-muted small">Trusted by thousands of members worldwide.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- ===================== END HERO SECTION ===================== -->
+
+
+  <!-- ===================== REGISTRATION FORM SECTION ===================== -->
+  <section id="register" class="py-5 bg-light">
+    <div class="container">
+
+      <div class="text-center mb-4">
+        <h2 class="fw-bold section-title">Create an Account</h2>
+        <p class="text-muted">Fill in your details below to register.</p>
+      </div>
+
+      <!-- Registration Card -->
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-8">
+          <div class="card shadow-lg border-0 rounded-4">
+            <div class="card-header bg-dark text-white rounded-top-4 py-3">
+              <h5 class="mb-0 text-center">
+                <i class="bi bi-person-plus-fill me-2"></i>Registration Form
+              </h5>
+            </div>
+            <div class="card-body p-4 p-md-5">
+
+              <form id="registrationForm" novalidate>
+
+                <!-- First Name + Last Name (side-by-side on md+) -->
+                <div class="row g-3 mb-3">
+                  <div class="col-12 col-md-6">
+                    <label for="firstName" class="form-label fw-semibold">
+                      <i class="bi bi-person me-1 text-success"></i>First Name
+                    </label>
+                    <input
+                      type="text"
+                      class="form-control form-control-lg"
+                      id="firstName"
+                      placeholder="John"
+                    />
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <label for="lastName" class="form-label fw-semibold">
+                      <i class="bi bi-person me-1 text-success"></i>Last Name
+                    </label>
+                    <input
+                      type="text"
+                      class="form-control form-control-lg"
+                      id="lastName"
+                      placeholder="Doe"
+                    />
+                  </div>
+                </div>
+
+                <!-- Email -->
+                <div class="mb-3">
+                  <label for="email" class="form-label fw-semibold">
+                    <i class="bi bi-envelope me-1 text-success"></i>Email Address
+                  </label>
+                  <input
+                    type="email"
+                    class="form-control form-control-lg"
+                    id="email"
+                    placeholder="john.doe@example.com"
+                    required
+                  />
+                  <div class="invalid-feedback">Please enter a valid email address.</div>
+                </div>
+
+                <!-- Password -->
+                <div class="mb-3">
+                  <label for="password" class="form-label fw-semibold">
+                    <i class="bi bi-lock me-1 text-success"></i>Password
+                  </label>
+                  <div class="input-group">
+                    <input
+                      type="password"
+                      class="form-control form-control-lg"
+                      id="password"
+                      placeholder="Create a strong password"
+                      required
+                    />
+                    <button
+                      class="btn btn-outline-secondary"
+                      type="button"
+                      id="togglePassword"
+                      title="Show/Hide Password"
+                    >
+                      <i class="bi bi-eye" id="eyeIcon"></i>
+                    </button>
+                  </div>
+                  <div class="invalid-feedback">Password is required.</div>
+                </div>
+
+                <!-- Terms & Conditions -->
+                <div class="mb-4">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="termsCheck"
+                    />
+                    <label class="form-check-label text-muted" for="termsCheck">
+                      I agree to the
+                      <a href="#" class="text-success text-decoration-none fw-semibold">
+                        Terms and Conditions
+                      </a>
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="d-grid">
+                  <button type="submit" class="btn btn-success btn-lg fw-semibold shadow-sm">
+                    <i class="bi bi-check-circle me-2"></i>Create Account
+                  </button>
+                </div>
+
+                <p class="text-center text-muted small mt-3 mb-0">
+                  Already have an account?
+                  <a href="#" class="text-success text-decoration-none fw-semibold">Sign in</a>
+                </p>
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- ===================== END FORM SECTION ===================== -->
+
+
+  <!-- ===================== USER DATA TABLE SECTION ===================== -->
+  <section id="about" class="py-5">
+    <div class="container">
+
+      <div class="text-center mb-4">
+        <h2 class="fw-bold section-title">Registered Users</h2>
+        <p class="text-muted">A snapshot of our current community members.</p>
+      </div>
+
+      <!-- Responsive table wrapper -->
+      <div class="table-responsive rounded-4 shadow-sm">
+        <table class="table table-striped table-hover align-middle mb-0">
+          <thead class="table-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col"><i class="bi bi-person me-1"></i>First Name</th>
+              <th scope="col"><i class="bi bi-person me-1"></i>Last Name</th>
+              <th scope="col"><i class="bi bi-envelope me-1"></i>Email</th>
+              <th scope="col"><i class="bi bi-shield-check me-1"></i>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Alice</td>
+              <td>Johnson</td>
+              <td>alice.johnson@example.com</td>
+              <td><span class="badge bg-success">Active</span></td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Bob</td>
+              <td>Martinez</td>
+              <td>bob.martinez@example.com</td>
+              <td><span class="badge bg-success">Active</span></td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Clara</td>
+              <td>Smith</td>
+              <td>clara.smith@example.com</td>
+              <td><span class="badge bg-warning text-dark">Pending</span></td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td>David</td>
+              <td>Lee</td>
+              <td>david.lee@example.com</td>
+              <td><span class="badge bg-success">Active</span></td>
+            </tr>
+            <tr>
+              <th scope="row">5</th>
+              <td>Emma</td>
+              <td>Wilson</td>
+              <td>emma.wilson@example.com</td>
+              <td><span class="badge bg-danger">Inactive</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </section>
+  <!-- ===================== END TABLE SECTION ===================== -->
+
+
+  <!-- ===================== BUTTON UTILITIES SECTION ===================== -->
+  <section id="contact" class="py-5 bg-light">
+    <div class="container">
+
+      <div class="text-center mb-4">
+        <h2 class="fw-bold section-title">Quick Actions</h2>
+        <p class="text-muted">Access key features of the portal.</p>
+      </div>
+
+      <div class="row g-3 justify-content-center">
+
+        <!-- Feature Cards with Buttons -->
+        <div class="col-12 col-md-4">
+          <div class="card border-0 shadow-sm rounded-4 h-100 text-center p-4 card-hover">
+            <div class="card-icon mb-3">
+              <i class="bi bi-person-lines-fill text-success display-5"></i>
+            </div>
+            <h6 class="fw-semibold">View Profile</h6>
+            <p class="text-muted small">Manage your personal account information.</p>
+            <!-- Primary button — visible on all screen sizes -->
+            <button class="btn btn-primary w-100 mt-auto">
+              <i class="bi bi-person me-1"></i>My Profile
+            </button>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <div class="card border-0 shadow-sm rounded-4 h-100 text-center p-4 card-hover">
+            <div class="card-icon mb-3">
+              <i class="bi bi-bell-fill text-warning display-5"></i>
+            </div>
+            <h6 class="fw-semibold">Notifications</h6>
+            <p class="text-muted small">Stay updated with the latest alerts and news.</p>
+            <!-- Secondary button — hidden on small screens, visible md and up -->
+            <button class="btn btn-secondary w-100 mt-auto d-none d-md-block">
+              <i class="bi bi-bell me-1"></i>View Alerts
+            </button>
+            <!-- Fallback visible only on small screens -->
+            <button class="btn btn-outline-secondary w-100 mt-auto d-md-none">
+              <i class="bi bi-bell me-1"></i>Alerts
+            </button>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <div class="card border-0 shadow-sm rounded-4 h-100 text-center p-4 card-hover">
+            <div class="card-icon mb-3">
+              <i class="bi bi-envelope-paper-fill text-info display-5"></i>
+            </div>
+            <h6 class="fw-semibold">Contact Us</h6>
+            <p class="text-muted small">Get in touch with our support team.</p>
+            <!-- Primary button — visible on all screen sizes -->
+            <button class="btn btn-primary w-100 mt-auto">
+              <i class="bi bi-chat-dots me-1"></i>Send Message
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Inline button group demonstration -->
+      <div class="text-center mt-5">
+        <p class="text-muted small mb-3 fw-semibold text-uppercase letter-spacing">Button Utility Showcase</p>
+        <div class="d-flex flex-wrap gap-2 justify-content-center">
+          <!-- Primary — all screen sizes -->
+          <button class="btn btn-primary px-4">
+            <i class="bi bi-star me-1"></i>Primary (All Screens)
+          </button>
+          <!-- Secondary — hidden on small, visible md+ -->
+          <button class="btn btn-secondary px-4 d-none d-md-inline-flex align-items-center gap-1">
+            <i class="bi bi-display"></i>Secondary (md+)
+          </button>
+          <button class="btn btn-outline-success px-4">
+            <i class="bi bi-download me-1"></i>Download
+          </button>
+          <button class="btn btn-outline-danger px-4">
+            <i class="bi bi-trash me-1"></i>Delete
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- ===================== END BUTTON UTILITIES SECTION ===================== -->
+
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="bg-dark text-white py-4">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-12 col-md-6 text-center text-md-start mb-3 mb-md-0">
+          <span class="fw-semibold">
+            <i class="bi bi-person-badge-fill me-2 text-success"></i>RegPortal
+          </span>
+          <span class="text-muted ms-2 small">&copy; 2026 All rights reserved.</span>
+        </div>
+        <div class="col-12 col-md-6 text-center text-md-end">
+          <a href="#" class="text-muted text-decoration-none me-3 small hover-light">Privacy Policy</a>
+          <a href="#" class="text-muted text-decoration-none me-3 small hover-light">Terms of Use</a>
+          <a href="#" class="text-muted text-decoration-none small hover-light">Support</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- ===================== END FOOTER ===================== -->
+
+
+  <!-- Bootstrap 5 JS Bundle CDN -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc4s9bIOgUxi8T/jzmGNGRNX3uFT8Kqv/nEutd51jIT"
+    crossorigin="anonymous"
+  ></script>
+
+  <!-- Custom JS -->
+  <script>
+    // Password visibility toggle
+    const toggleBtn = document.getElementById('togglePassword');
+    const passwordInput = document.getElementById('password');
+    const eyeIcon = document.getElementById('eyeIcon');
+
+    toggleBtn.addEventListener('click', () => {
+      const isHidden = passwordInput.type === 'password';
+      passwordInput.type = isHidden ? 'text' : 'password';
+      eyeIcon.className = isHidden ? 'bi bi-eye-slash' : 'bi bi-eye';
+    });
+
+    // Basic form validation feedback
+    const form = document.getElementById('registrationForm');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (!form.checkValidity()) {
+        form.classList.add('was-validated');
+      } else {
+        const btn = form.querySelector('button[type="submit"]');
+        btn.innerHTML = '<i class="bi bi-check2-circle me-2"></i>Registered Successfully!';
+        btn.classList.replace('btn-success', 'btn-outline-success');
+        btn.disabled = true;
+      }
+    });
+  </script>
+
+</body>
+</html>

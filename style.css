@@ -1,0 +1,383 @@
+/* ============================================================
+   Bootstrap Registration Portal — Custom Styles
+   ============================================================ */
+
+/* ---------- Global ---------- */
+:root {
+  --accent-green: #198754;
+  --text-dark: #212529;
+  --radius-lg: 1rem;
+  --shadow-soft: 0 4px 24px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 8px 32px rgba(0, 0, 0, 0.14);
+  --transition: 0.25s ease;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  color: var(--text-dark);
+  background-color: #f8f9fa;
+  line-height: 1.65;
+}
+
+
+/* ---------- Navbar ---------- */
+.navbar {
+  padding-top: 0.85rem;
+  padding-bottom: 0.85rem;
+}
+
+.brand-icon {
+  font-size: 1.6rem;
+  color: #20c997;
+  line-height: 1;
+}
+
+.brand-text {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #fff;
+}
+
+.navbar-brand:hover .brand-text {
+  color: #20c997;
+  transition: color var(--transition);
+}
+
+.nav-link {
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.45rem 0.85rem !important;
+  border-radius: 0.4rem;
+  transition: background var(--transition), color var(--transition);
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #20c997 !important;
+}
+
+
+/* ---------- Hero Section ---------- */
+.hero-section {
+  background-color: #000;
+}
+
+.hero-wrapper {
+  overflow: hidden;
+  max-height: 520px;
+}
+
+.hero-img {
+  object-fit: cover;
+  object-position: center;
+  max-height: 520px;
+  opacity: 0.55;
+  display: block;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  padding: 2rem;
+}
+
+.hero-overlay h1 {
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.5);
+  font-size: clamp(1.8rem, 5vw, 3.5rem);
+}
+
+.hero-overlay .lead {
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+}
+
+/* Circular avatar below hero */
+.circular-img-wrapper {
+  padding: 2.5rem 1rem 1rem;
+  background: #fff;
+}
+
+.circular-avatar {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  margin-top: -65px;
+  position: relative;
+  z-index: 2;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.circular-avatar:hover {
+  transform: scale(1.07);
+  box-shadow: 0 8px 28px rgba(25, 135, 84, 0.35) !important;
+}
+
+
+/* ---------- Section Titles ---------- */
+.section-title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 56px;
+  height: 3px;
+  background: var(--accent-green);
+  border-radius: 2px;
+  margin: 0.4rem auto 0;
+}
+
+
+/* ---------- Registration Card ---------- */
+.card {
+  border-radius: var(--radius-lg) !important;
+  overflow: hidden;
+}
+
+.card.shadow-lg {
+  box-shadow: var(--shadow-soft) !important;
+  transition: box-shadow var(--transition);
+}
+
+.card.shadow-lg:hover {
+  box-shadow: var(--shadow-hover) !important;
+}
+
+.card-header.bg-dark {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%) !important;
+}
+
+/* Form controls */
+.form-control {
+  border-radius: 0.6rem;
+  border: 1.5px solid #dee2e6;
+  transition: border-color var(--transition), box-shadow var(--transition);
+  font-size: 0.95rem;
+}
+
+.form-control:focus {
+  border-color: var(--accent-green);
+  box-shadow: 0 0 0 0.2rem rgba(25, 135, 84, 0.18);
+}
+
+.input-group .form-control {
+  border-right: none;
+  border-radius: 0.6rem 0 0 0.6rem;
+}
+
+.input-group .btn {
+  border-radius: 0 0.6rem 0.6rem 0;
+  border: 1.5px solid #dee2e6;
+  border-left: none;
+}
+
+.input-group .btn:hover {
+  background-color: #f0f0f0;
+}
+
+/* Submit button */
+.btn-success {
+  background: linear-gradient(135deg, #198754 0%, #157347 100%);
+  border: none;
+  letter-spacing: 0.03em;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.btn-success:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(25, 135, 84, 0.4) !important;
+  background: linear-gradient(135deg, #157347 0%, #0f5132 100%);
+}
+
+.btn-success:active {
+  transform: translateY(0);
+}
+
+/* Checkbox */
+.form-check-input:checked {
+  background-color: var(--accent-green);
+  border-color: var(--accent-green);
+}
+
+
+/* ---------- Table ---------- */
+.table-responsive {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.table {
+  font-size: 0.92rem;
+  margin-bottom: 0;
+}
+
+.table-hover tbody tr {
+  transition: background-color var(--transition), transform 0.15s ease;
+  cursor: default;
+}
+
+.table-hover tbody tr:hover {
+  background-color: rgba(25, 135, 84, 0.06) !important;
+}
+
+.table thead th {
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 1rem 1.1rem;
+  border: none;
+}
+
+.table tbody td,
+.table tbody th {
+  padding: 0.85rem 1.1rem;
+  vertical-align: middle;
+  border-color: rgba(0, 0, 0, 0.05);
+}
+
+.badge {
+  font-size: 0.75rem;
+  padding: 0.4em 0.75em;
+  border-radius: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+
+/* ---------- Button Utilities / Feature Cards ---------- */
+.card-hover {
+  transition: transform var(--transition), box-shadow var(--transition);
+  cursor: default;
+}
+
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover) !important;
+}
+
+.card-icon i {
+  transition: transform var(--transition);
+}
+
+.card-hover:hover .card-icon i {
+  transform: scale(1.15) rotate(-5deg);
+}
+
+/* General button transitions */
+.btn {
+  border-radius: 0.55rem;
+  transition: transform var(--transition), box-shadow var(--transition),
+    background-color var(--transition);
+}
+
+.btn:not(.btn-success):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.letter-spacing {
+  letter-spacing: 0.1em;
+}
+
+
+/* ---------- Footer ---------- */
+footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+footer a {
+  transition: color var(--transition);
+}
+
+footer a:hover {
+  color: #20c997 !important;
+}
+
+
+/* ---------- Responsive Tweaks ---------- */
+
+/* Tablet */
+@media (max-width: 991.98px) {
+  .hero-wrapper {
+    max-height: 380px;
+  }
+
+  .hero-img {
+    max-height: 380px;
+  }
+
+  .circular-avatar {
+    width: 110px;
+    height: 110px;
+    margin-top: -55px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767.98px) {
+  .hero-wrapper {
+    max-height: 280px;
+  }
+
+  .hero-img {
+    max-height: 280px;
+  }
+
+  .hero-overlay .btn {
+    font-size: 0.9rem;
+    padding: 0.5rem 1.5rem;
+  }
+
+  .circular-avatar {
+    width: 90px;
+    height: 90px;
+    margin-top: -45px;
+  }
+
+  .card-body {
+    padding: 1.5rem !important;
+  }
+
+  .table thead th {
+    padding: 0.75rem;
+    font-size: 0.75rem;
+  }
+
+  .table tbody td,
+  .table tbody th {
+    padding: 0.65rem 0.75rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 575.98px) {
+  .section-title {
+    font-size: 1.4rem;
+  }
+
+  .hero-overlay h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero-overlay .lead {
+    font-size: 0.9rem;
+  }
+}
